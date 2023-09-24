@@ -1,0 +1,20 @@
+CREATE TABLE tblEmployees5(ID INT,NAME VARCHAR(30),GENDER VARCHAR(30));
+
+INSERT INTO tblEmployees5 VALUES(1,'Sara','Female');
+INSERT INTO tblEmployees5 VALUES(2,'John','Male');
+INSERT INTO tblEmployees5 VALUES(3,'Pam','Female');
+
+SELECT * FROM tblEmployees5;
+
+CREATE PROCEDURE spGetNameByID
+@ID INT
+AS
+BEGIN
+     SELECT NAME FROM tblEmployees5 WHERE ID = @ID
+END
+
+EXECUTE spGetNameByID 1;
+EXECUTE spGetNameByID 2;
+
+SELECT NAME FROM tblEmployees5 WHERE ID = 1;
+SELECT NAME FROM tblEmployees5 WHERE ID = 2;
